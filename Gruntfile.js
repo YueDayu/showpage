@@ -293,7 +293,8 @@ module.exports = function (grunt) {
             'styles/fonts/{,*/}*.*',
             'styles/*.*',
             'scripts/turn.html4.min.js',
-            'scripts/turn.min.js'
+            'scripts/turn.min.js',
+            'files/*.*'
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
