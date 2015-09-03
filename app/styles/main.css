@@ -1,117 +1,178 @@
-body, ul, table, form {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  font-family: "Roboto", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+@media screen and (min-width: 600px) {
+  body, ul, table, form {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Roboto", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  }
+
+  .animated {
+    transition: margin-left 0.2s ease-in-out;
+  }
+
+  #canvas {
+    margin: 20px auto;
+  }
+
+  .sj-book .shadow {
+    transition: box-shadow 0.5s;
+    box-shadow: 0 0 10px #999;
+  }
+
+  .sj-book .page {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .sj-book .p1 {
+    background-image: url('../images/001.jpg') !important;
+    background-size: cover !important;
+  }
+
+  .sj-book .p2 {
+    background-image: url('../images/002.jpg') !important;
+    background-size: cover !important;
+  }
+
+  .sj-book .p15 {
+    background-image: url('../images/003.jpg') !important;
+    background-size: cover !important;
+  }
+
+  .sj-book .p16 {
+    background-image: url('../images/004.jpg') !important;;
+    background-size: cover !important;
+  }
+
+  .sj-book-transform div[page="1"] > div, .sj-book-transform div[page="2"] > div {
+    overflow: visible !important;
+  }
+
+  .sj-book .depth {
+    background-image: url('../images/pages-depth.png');
+    position: absolute;
+    top: 7px;
+    width: 16px;
+    height: 590px;
+  }
+
+  .sj-book .front-side .depth {
+    left: 4px;
+    background-position: 0 0;
+  }
+
+  .sj-book .back-side .depth {
+    right: 4px;
+    background-position: right 0;
+  }
+
+  .sj-book .hard {
+    background-color: white;
+    box-shadow: none;
+  }
+
+  .sj-book .page-wrapper {
+    perspective: 2000px;
+  }
+
+  .sj-book .own-size {
+    background-color: white;
+    overflow: auto;
+  }
+
+  .sj-book .loader {
+    background-image: url('../images/loader.gif');
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 280px;
+    left: 219px;
+  }
+
+  .sj-book .page-number {
+    color: #999;
+    width: 100%;
+    bottom: 20px;
+    position: absolute;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    font-size: 11px;
+  }
+
+  .sj-book .even {
+    background-image: url('../images/gradient-page-left.jpg');
+    background-position: right top;
+    background-repeat: repeat-y;
+  }
+
+  .sj-book .odd {
+    background-image: url('../images/gradient-page-right.jpg');
+    background-position: left top;
+    background-repeat: repeat-y;
+  }
+
+  .page-contents {
+    margin: 40px 25px;
+  }
+
+  .show-img {
+    height: 200px;
+  }
+
+  .page-contents .content-list li span {
+    float: right;
+  }
+
+  .page-contents .content-list a {
+    float: left;
+    width: 100%;
+    clear: both;
+    text-decoration: none;
+    color: #333;
+    margin: 2px 0;
+    padding: 0 10px;
+  }
+
+  .page-contents .content-list a:hover {
+    background: #CAD1EE;
+    float: left;
+    width: 100%;
+    clear: both;
+    text-decoration: none;
+    border-radius: 10px;
+  }
+
+  .class-content {
+    margin-left: 20px;
+  }
 }
 
-.animated {
-  transition: margin-left 0.2s ease-in-out;
-}
+@media screen and (max-width: 600px) {
+  body {
+    margin: 10px;
+    padding: 0;
+    font-family: "Roboto", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  }
 
-#canvas {
-  margin: 20px auto;
-}
+  .show-img {
+    width: 100%;
+  }
 
-.sj-book .shadow {
-  transition: box-shadow 0.5s;
-  box-shadow: 0 0 10px #999;
-}
+  .sj-book .page-number {
+    display: none;
+  }
 
-.sj-book .page {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
+  .page-contents .content-list {
+    display: none;
+  }
 
-.sj-book .p1 {
-  background-image: url('../images/001.jpg') !important;
-  background-size: cover !important;
-}
+  .class-content {
+    padding: 0;
+  }
 
-.sj-book .p2 {
-  background-image: url('../images/002.jpg') !important;
-  background-size: cover !important;
-}
-
-.sj-book .p15 {
-  background-image: url('../images/003.jpg') !important;
-  background-size: cover !important;
-}
-
-.sj-book .p16 {
-  background-image: url('../images/004.jpg') !important;;
-  background-size: cover !important;
-}
-
-.sj-book-transform div[page="1"] > div, .sj-book-transform div[page="2"] > div {
-  overflow: visible !important;
-}
-
-.sj-book .depth {
-  background-image: url('../images/pages-depth.png');
-  position: absolute;
-  top: 7px;
-  width: 16px;
-  height: 590px;
-}
-
-.sj-book .front-side .depth {
-  left: 4px;
-  background-position: 0 0;
-}
-
-.sj-book .back-side .depth {
-  right: 4px;
-  background-position: right 0;
-}
-
-.sj-book .hard {
-  background-color: white;
-  box-shadow: none;
-}
-
-.sj-book .page-wrapper {
-  perspective: 2000px;
-}
-
-.sj-book .own-size {
-  background-color: white;
-  overflow: auto;
-}
-
-.sj-book .loader {
-  background-image: url('../images/loader.gif');
-  width: 22px;
-  height: 22px;
-  position: absolute;
-  top: 280px;
-  left: 219px;
-}
-
-.sj-book .page-number {
-  color: #999;
-  width: 100%;
-  bottom: 20px;
-  position: absolute;
-  display: block;
-  text-align: center;
-  line-height: 30px;
-  font-size: 11px;
-}
-
-.sj-book .even {
-  background-image: url('../images/gradient-page-left.jpg');
-  background-position: right top;
-  background-repeat: repeat-y;
-}
-
-.sj-book .odd {
-  background-image: url('../images/gradient-page-right.jpg');
-  background-position: left top;
-  background-repeat: repeat-y;
-}
-
-.page-contents {
-  margin: 40px 25px;
+  .phone-hidden {
+    display: none;
+  }
 }
 
 .page-contents .title {
@@ -124,41 +185,10 @@ body, ul, table, form {
   line-height: 25px;
 }
 
-.page-contents .content-list li span {
-  float: right;
-}
-
-.page-contents .content-list a {
-  float: left;
-  width: 100%;
-  clear: both;
-  text-decoration: none;
-  color: #333;
-  margin: 2px 0;
-  padding: 0 10px;
-}
-
-.page-contents .content-list a:hover {
-  background: #CAD1EE;
-  float: left;
-  width: 100%;
-  clear: both;
-  text-decoration: none;
-  border-radius: 10px;
-}
-
 .content-word {
   text-indent: 18px;
   margin: 20px 0;
   line-height: 22px;
-}
-
-.class-content {
-  margin-left: 20px;
-}
-
-.show-img {
-  height: 200px;
 }
 
 .img-des {

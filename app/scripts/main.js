@@ -192,13 +192,13 @@ function loadApp() {
   $('#canvas').css({visibility: ''});
 }
 
-// Hide canvas
-$('#canvas').css({visibility: 'hidden'});
-
-yepnope({
-  test: Modernizr.csstransforms,
-  yep: ['./scripts/turn.min.js'],
-  nope: ['./scripts/turn.html4.min.js', './styles/jquery.ui.html4.css'],
-  both: ['./styles/jquery.ui.css'],
-  complete: loadApp
-});
+if ($(window).width() > 600) {
+  $('#canvas').css({visibility: 'hidden'});
+  yepnope({
+    test: Modernizr.csstransforms,
+    yep: ['./scripts/turn.min.js'],
+    nope: ['./scripts/turn.html4.min.js', './styles/jquery.ui.html4.css'],
+    both: ['./styles/jquery.ui.css'],
+    complete: loadApp
+  });
+}
