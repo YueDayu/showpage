@@ -102,6 +102,7 @@ function loadApp() {
   $('.hard').css({'width': book_width / 2 + 'px', 'height': book_height + 'px'});
   $('#canvas').css({'width': book_width + 'px', 'height': book_height + 'px'});
   $('.own-size').css({'width': book_width / 2 - 20 + 'px', 'height': book_height - 18 + 'px'});
+  $('.show-img').css({'height': book_height / 3 + 'px'});
 
   flipBook.turn({
     elevation: 50,
@@ -171,7 +172,7 @@ function loadApp() {
 
       end: function (e, pageObj) {
         var book = $(this);
-        updateDepth(book);
+        //updateDepth(book);
         setTimeout(function () {
           $('#slider').slider('value', getViewNumber(book));
         }, 1);
