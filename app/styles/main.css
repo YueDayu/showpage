@@ -123,6 +123,10 @@
     float: right;
   }
 
+  .class-content {
+    margin-left: 20px;
+  }
+
   .page-contents .content-list a {
     float: left;
     width: 100%;
@@ -141,10 +145,6 @@
     text-decoration: none;
     border-radius: 10px;
   }
-
-  .class-content {
-    margin-left: 20px;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -162,11 +162,15 @@
     display: none;
   }
 
-  .page-contents .content-list {
-    display: none;
-  }
+  /*.page-contents .content-list {*/
+    /*display: none;*/
+  /*}*/
 
   .class-content {
+    padding: 0;
+  }
+
+  .content-list {
     padding: 0;
   }
 
@@ -194,3 +198,4 @@
 .img-des {
   text-align: center;
 }
+
